@@ -5,21 +5,17 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
     const navRef = useRef(null);
 
-    // Auto-close after 5 seconds
+    // Auto-close mobile menu after 5 seconds
     useEffect(() => {
-        let timer;
-        if (open) {
-            timer = setTimeout(() => setOpen(false), 5000);
-        }
+        if (!open) return;
+        const timer = setTimeout(() => setOpen(false), 5000);
         return () => clearTimeout(timer);
     }, [open]);
 
-    // Close on scroll or click outside
+    // Close mobile menu on scroll / outside click
     useEffect(() => {
         const handleOutside = (e) => {
-            if (navRef.current && !navRef.current.contains(e.target)) {
-                setOpen(false);
-            }
+            if (navRef.current && !navRef.current.contains(e.target)) setOpen(false);
         };
         const handleScroll = () => open && setOpen(false);
 
@@ -40,9 +36,25 @@ export default function Navbar() {
         <nav className="nav" ref={navRef}>
             <h2>Helen AFH</h2>
 
-            {/* Use conditional rendering to fully remove menu from DOM when closed */}
+            {/* Desktop Menu: always visible */}
+            <div className="nav-links desktop">
+                <Link to="/">Home</Link>
+                <Link to="/services">Services</Link>
+                <Link to="/rooms">Rooms</Link>
+                <Link to="/gallery">Gallery</Link>
+                <Link to="/contact">Contact</Link>
+            </div>
+
+            {/* Hamburger Icon (mobile only) */}
+            <div className="hamburger" onClick={() => setOpen(!open)}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            {/* Mobile Menu */}
             {open && (
-                <div className="nav-links open">
+                <div className="nav-links mobile open">
                     <Link to="/" onClick={handleLinkClick}>Home</Link>
                     <Link to="/services" onClick={handleLinkClick}>Services</Link>
                     <Link to="/rooms" onClick={handleLinkClick}>Rooms</Link>
@@ -50,12 +62,6 @@ export default function Navbar() {
                     <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
                 </div>
             )}
-
-            <div className="hamburger" onClick={() => setOpen(!open)}>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
         </nav>
     );
 }

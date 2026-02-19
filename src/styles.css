@@ -579,7 +579,8 @@ body {
 }
 
 /* NAV LINKS */
-.nav-links {
+/* Mobile Menu Only */
+.nav-links.mobile {
     position: absolute;
     top: 60px;
     right: 0;
@@ -592,12 +593,39 @@ body {
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
-    /* prevent interaction when closed */
     z-index: 1000;
 }
 
-.nav-links.open {
+.nav-links.mobile.open {
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
+}
+
+/* Desktop Menu Only */
+.nav-links.desktop {
+    display: flex;
+    gap: 20px;
+    position: static;
+    /* normal flow, not absolute */
+    opacity: 1;
+    /* fully visible */
+    pointer-events: auto;
+}
+
+@media(max-width:768px) {
+    .nav-links.desktop {
+        display: none;
+        /* hide desktop on mobile */
+    }
+
+    .hamburger {
+        display: flex;
+        /* show hamburger */
+    }
+
+    .nav-links.mobile {
+        display: flex;
+        flex-direction: column;
+    }
 }
