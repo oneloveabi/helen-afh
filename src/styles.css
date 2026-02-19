@@ -577,3 +577,27 @@ body {
     color: #555;
     line-height: 1.6;
 }
+
+/* NAV LINKS */
+.nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    /* prevent interaction when closed */
+    z-index: 1000;
+}
+
+.nav-links.open {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
