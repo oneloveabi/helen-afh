@@ -1,18 +1,46 @@
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
+    const navRef = useRef(null);
 
-    const toggleMenu = () => {
-        setOpen(!open);
-        if (!open) setTimeout(() => setOpen(false), 5000);
-    };
+    // Close after 5 seconds
+    useEffect(() => {
+        let timer;
+        if (open) {
+            timer = setTimeout(() => setOpen(false), 5000);
+        }
+        return () => clearTimeout(timer);
+    }, [open]);
+
+    // Close if user scrolls or clicks outside menu
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setOpen(false);
+            }
+        };
+
+        const handleScroll = () => {
+            if (open) setOpen(false);
+        };
+
+        window.addEventListener("mousedown", handleClickOutside);
+        window.addEventListener("touchstart", handleClickOutside);
+        window.addEventListener("scroll", handleScroll, true); // capture scroll on all elements
+
+        return () => {
+            window.removeEventListener("mousedown", handleClickOutside);
+            window.removeEventListener("touchstart", handleClickOutside);
+            window.removeEventListener("scroll", handleScroll, true);
+        };
+    }, [open]);
 
     const handleLinkClick = () => setOpen(false);
 
     return (
-        <nav className="nav">
+        <nav className="nav" ref={navRef}>
             <h2>Helen AFH</h2>
 
             <div className={`nav-links ${open ? "open" : ""}`}>
@@ -23,7 +51,7 @@ export default function Navbar() {
                 <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
             </div>
 
-            <div className="hamburger" onClick={toggleMenu}>
+            <div className="hamburger" onClick={() => setOpen(!open)}>
                 <div></div>
                 <div></div>
                 <div></div>
