@@ -1,19 +1,17 @@
+import React from "react";
+
 export default function Contact() {
     return (
-        <div className="page">
-            <h1>Contact & Tour Request</h1>
-
+        <section className="contact-page">
+            <h2>Contact Us</h2>
+            <p>Have questions or want to schedule a tour? Fill out the form below.</p>
             <form className="contact-form">
-                <input placeholder="Full Name" required />
-                <input placeholder="Phone Number" required />
-                <input placeholder="Email" />
-                <textarea placeholder="Tell us about your needs"></textarea>
-
-                <button>Send Request</button>
+                <input type="text" placeholder="Full Name" required />
+                <input type="email" placeholder="Email Address" required />
+                <input type="tel" placeholder="Phone Number" required />
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
             </form>
-
-            <p>📍 Lynnwood, WA</p>
-            <p>📞 (253) XXX-XXXX</p>
-        </div>
+        </section>
     );
 }

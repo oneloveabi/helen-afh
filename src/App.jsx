@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingCTA from "./components/FloatingCTA";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -13,7 +14,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -22,7 +22,7 @@ export default function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-
+      <FloatingCTA />
       <Footer />
     </BrowserRouter>
   );

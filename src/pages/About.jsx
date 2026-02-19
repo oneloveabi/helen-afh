@@ -1,18 +1,10 @@
 export default function About() {
     return (
-        <div className="page">
-            <h1>About Helen Adult Family Home</h1>
-
+        <section className="about">
+            <h2>About Helen Adult Family Home</h2>
             <p>
-                Our mission is to provide compassionate, respectful,
-                and personalized care for seniors in a safe residential
-                environment.
+                Helen Adult Family Home is a licensed, home-like facility providing compassionate care for seniors and adults with specialized needs. We focus on safety, comfort, and personalized care plans for every resident.
             </p>
-
-            <p>
-                Our caregivers are trained professionals dedicated to
-                preserving dignity, independence, and quality of life.
-            </p>
-        </div>
+        </section>
     );
 }
