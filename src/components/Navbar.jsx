@@ -5,14 +5,14 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
     const navRef = useRef(null);
 
-    // Auto-close mobile menu after 5 seconds
+    // Auto-close mobile menu
     useEffect(() => {
         if (!open) return;
         const timer = setTimeout(() => setOpen(false), 5000);
         return () => clearTimeout(timer);
     }, [open]);
 
-    // Close mobile menu on scroll / outside click
+    // Close mobile menu on scroll or outside click
     useEffect(() => {
         const handleOutside = (e) => {
             if (navRef.current && !navRef.current.contains(e.target)) setOpen(false);
@@ -34,9 +34,12 @@ export default function Navbar() {
 
     return (
         <nav className="nav" ref={navRef}>
-            <h2>Helen AFH</h2>
+            {/* Make title clickable */}
+            <Link to="/" style={{ textDecoration: "none" }}>
+                <h2>Helen AFH</h2>
+            </Link>
 
-            {/* Desktop Menu: always visible */}
+            {/* Desktop Menu */}
             <div className="nav-links desktop">
                 <Link to="/">Home</Link>
                 <Link to="/services">Services</Link>
@@ -45,7 +48,7 @@ export default function Navbar() {
                 <Link to="/contact">Contact</Link>
             </div>
 
-            {/* Hamburger Icon (mobile only) */}
+            {/* Mobile Hamburger */}
             <div className="hamburger" onClick={() => setOpen(!open)}>
                 <div></div>
                 <div></div>

@@ -1,4 +1,13 @@
+import { useLocation } from "react-router-dom";
+
 export default function FloatingCTA() {
+    const location = useLocation();
+
+    // Hide on homepage (/) and contact page (/contact)
+    if (location.pathname === "/" || location.pathname === "/contact") {
+        return null; // don’t render button
+    }
+
     return (
         <a href="/contact" className="floating-cta">
             Schedule Tour
