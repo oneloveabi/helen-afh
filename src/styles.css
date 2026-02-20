@@ -765,3 +765,33 @@ body {
     text-decoration: none;
     font-weight: 600;
 }
+
+.centered-footer {
+    background: #1f2b3a;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.centered-footer h4 {
+    margin-bottom: 15px;
+}
+
+.centered-footer p {
+    margin: 8px 0;
+}
+
+.centered-footer a {
+    color: #2a7de1;
+    text-decoration: none;
+}
+
+.centered-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.85;
+}
