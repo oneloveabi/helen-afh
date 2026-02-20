@@ -9,6 +9,7 @@ import Services from "./pages/Services";
 import Rooms from "./pages/Rooms";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import ThankYou from "./pages/ThankYou";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
       <FloatingCTA />
       <Footer />

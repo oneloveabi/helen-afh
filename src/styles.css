@@ -629,3 +629,139 @@ body {
         flex-direction: column;
     }
 }
+
+.contact-page {
+    max-width: 600px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.contact-form button {
+    background: #2a7de1;
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #1f63b5;
+}
+
+/* Make checkbox row match input fields */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Larger, modern checkbox */
+.checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #2a7de1;
+    /* matches your buttons */
+    cursor: pointer;
+}
+
+/* Hover like input fields */
+.checkbox-row:hover {
+    border-color: #2a7de1;
+}
+
+/* Keep spacing consistent with form */
+.contact-form .checkbox-row {
+    margin: 6px 0;
+}
+
+.page-container {
+    padding-top: 90px;
+    /* accounts for fixed header */
+}
+
+.hero-small {
+    background: linear-gradient(135deg, #2a7de1, #0ea5a4);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.subtitle {
+    opacity: 0.9;
+    margin-top: 10px;
+}
+
+.content-section {
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.button-group {
+    margin-top: 30px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: #2a7de1;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-secondary {
+    background: #e5e7eb;
+    color: #111827;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
