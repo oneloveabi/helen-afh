@@ -4,26 +4,35 @@ export default function Footer() {
 
             <h4>Contact Us</h4>
 
-            <p>
-                📞 <a href="tel:+12532707790">(253) 270-7790</a>
-            </p>
+            <div className="contact-row">
+                <p>
+                    📞 <a href="tel:+12532707790">(253) 270-7790</a>
+                </p>
 
-            <p>
-                📧{" "}
-                <a href="mailto:helenayana@helenadultfamilyhome.com">
-                    helenayana@helenadultfamilyhome.com
-                </a>{" "}
-                (or{" "}
-                <a href="mailto:helenadultfamilyhome@gmail.com">
-                    helenadultfamilyhome@gmail.com
-                </a>
-                )
-            </p>
+                <p>
+                    📧{" "}
+                    <a href="mailto:helenayana@helenadultfamilyhome.com">
+                        helenayana@helenadultfamilyhome.com
+                    </a>{" "}
+                    (or{" "}
+                    <a href="mailto:helenadultfamilyhome@gmail.com">
+                        helenadultfamilyhome@gmail.com
+                    </a>
+                    )
+                </p>
 
-            <p>
-                📍 1234 Care Lane<br />
-                Lynnwood, WA
-            </p>
+                <p>
+                    📍{" "}
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=133+107th+St+SE,+Everett,+WA+98208-7041"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        133 107th St SE,
+                        Everett, WA 98208-7041
+                    </a>
+                </p>
+            </div>
 
             <div className="footer-bottom">
                 © {new Date().getFullYear()} Helen Adult Family Home — All Rights Reserved
