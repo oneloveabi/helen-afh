@@ -14,11 +14,6 @@ export default function Footer() {
                     <a href="mailto:helenayana@helenadultfamilyhome.com">
                         helenayana@helenadultfamilyhome.com
                     </a>{" "}
-                    (or{" "}
-                    <a href="mailto:helenadultfamilyhome@gmail.com">
-                        helenadultfamilyhome@gmail.com
-                    </a>
-                    )
                 </p>
 
                 <p>
