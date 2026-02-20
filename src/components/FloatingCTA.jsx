@@ -4,7 +4,7 @@ export default function FloatingCTA() {
     const location = useLocation();
 
     // Hide on homepage (/) and contact page (/contact)
-    if (location.pathname === "/" || location.pathname === "/contact") {
+    if (location.pathname === "/" || location.pathname === "/contact" || location.pathname === "/thank-you") {
         return null; // don’t render button
     }
 
