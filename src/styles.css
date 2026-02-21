@@ -795,3 +795,21 @@ body {
     font-size: 14px;
     opacity: 0.85;
 }
+
+.about-home {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+    line-height: 1.7;
+    color: #333;
+}
+
+.about-home h2 {
+    color: #2a7de1;
+    margin-bottom: 20px;
+}
+
+.about-home p {
+    margin-bottom: 18px;
+}
