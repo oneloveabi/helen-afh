@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/Helen_Logo.png";
+
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -33,8 +35,9 @@ export default function Navbar() {
             <div className="container nav-inner">
 
                 {/* Logo / Title */}
+
                 <Link to="/" className="logo">
-                    Helen AFH
+                    <img src={logo} alt="Helen AFH Logo" style={{ height: "100px", objectFit: "contain" }} />
                 </Link>
 
                 {/* Desktop Menu */}
