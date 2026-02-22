@@ -1196,3 +1196,67 @@ body {
         gap: 14px;
     }
 }
+
+/* Mobile menu */
+.nav-links.mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    /* below navbar */
+    right: 0;
+    width: 220px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 12px 12px;
+
+    /* START hidden offscreen */
+    transform: translateX(100%) translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+
+    /* Smooth animation */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+        opacity 0.35s ease;
+}
+
+.nav-links.mobile.open {
+    transform: translateX(0) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Optional: stagger menu items for a nice effect */
+.nav-links.mobile.open a {
+    opacity: 0;
+    transform: translateX(20px);
+    animation: slideIn 0.35s forwards;
+}
+
+.nav-links.mobile.open a:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.nav-links.mobile.open a:nth-child(2) {
+    animation-delay: 0.10s;
+}
+
+.nav-links.mobile.open a:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.nav-links.mobile.open a:nth-child(4) {
+    animation-delay: 0.20s;
+}
+
+.nav-links.mobile.open a:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
