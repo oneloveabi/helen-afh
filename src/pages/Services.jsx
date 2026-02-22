@@ -1,38 +1,65 @@
+import {
+    FaUserNurse,
+    FaPills,
+    FaBrain,
+    FaUtensils,
+    FaWalking,
+    FaHandsHelping
+} from "react-icons/fa";
+
 export default function Services() {
     const services = [
         {
-            title: "Personalized Care Plans",
-            description: "We create a customized care plan for every resident based on their unique needs."
+            icon: <FaUserNurse />,
+            title: "24-Hour Personalized Care",
+            description:
+                "Compassionate assistance available day and night, tailored to each resident’s needs."
         },
         {
-            title: "Memory Support",
-            description: "Specialized programs for residents with dementia or memory-related challenges."
-        },
-        {
-            title: "Mobility Assistance",
-            description: "24/7 support for walking, transfers, and safe movement around the home."
-        },
-        {
+            icon: <FaPills />,
             title: "Medication Management",
-            description: "Professional oversight to ensure medications are taken safely and on time."
+            description:
+                "Safe administration and monitoring of medications by trained caregivers."
         },
         {
-            title: "Home-Cooked Meals",
-            description: "Nutritious, delicious meals prepared fresh daily."
+            icon: <FaBrain />,
+            title: "Memory Care Support",
+            description:
+                "Structured support for residents living with dementia or memory challenges."
         },
-        // {
-        //     title: "Hospice & Palliative Care",
-        //     description: "Compassionate support for residents and families in end-of-life care."
-        // }
+        {
+            icon: <FaWalking />,
+            title: "Mobility & Daily Assistance",
+            description:
+                "Help with walking, transfers, bathing, dressing, and other daily activities."
+        },
+        {
+            icon: <FaUtensils />,
+            title: "Nutritious Home-Cooked Meals",
+            description:
+                "Fresh, balanced meals prepared daily with residents’ preferences in mind."
+        },
+        {
+            icon: <FaHandsHelping />,
+            title: "Engaging Activities",
+            description:
+                "Social, recreational, and therapeutic activities that promote well-being."
+        }
     ];
 
     return (
         <section className="services">
             <h2>Our Care Services</h2>
-            <p>We provide compassionate, professional care tailored to each resident’s needs. Our services are designed to promote comfort, safety, and independence.</p>
-            <div className="services-list">
+
+            <p className="services-intro">
+                We provide compassionate, family-style care in a safe and
+                comfortable home environment.
+            </p>
+
+            <div className="services-grid">
                 {services.map((service, idx) => (
                     <div key={idx} className="service-card">
+                        <div className="service-icon">{service.icon}</div>
                         <h3>{service.title}</h3>
                         <p>{service.description}</p>
                     </div>
