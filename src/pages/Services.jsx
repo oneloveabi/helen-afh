@@ -20,10 +20,10 @@ export default function Services() {
             title: "Home-Cooked Meals",
             description: "Nutritious, delicious meals prepared fresh daily."
         },
-        {
-            title: "Hospice & Palliative Care",
-            description: "Compassionate support for residents and families in end-of-life care."
-        }
+        // {
+        //     title: "Hospice & Palliative Care",
+        //     description: "Compassionate support for residents and families in end-of-life care."
+        // }
     ];
 
     return (
