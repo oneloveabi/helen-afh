@@ -13,8 +13,8 @@ export default function Footer() {
 
                 <div className="contact-row">
 
-                    <a href="tel:+12532707790">
-                        📞 (253) 270-7790
+                    <a href="tel:+14255135855">
+                        📞 (425) 513-5855
                     </a>
 
                     <a href="mailto:helenayana@helenadultfamilyhome.com">
