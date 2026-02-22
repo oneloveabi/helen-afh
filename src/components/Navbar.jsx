@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
 import logo from "../assets/Helen_Logo.png";
-
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const navRef = useRef(null);
 
-    // Close menu on outside click or scroll
     useEffect(() => {
         const handleOutside = (e) => {
             if (navRef.current && !navRef.current.contains(e.target)) {
@@ -34,10 +33,13 @@ export default function Navbar() {
         <nav className="nav" ref={navRef}>
             <div className="container nav-inner">
 
-                {/* Logo / Title */}
-
+                {/* Logo */}
                 <Link to="/" className="logo">
-                    <img src={logo} alt="Helen AFH Logo" style={{ height: "100px", objectFit: "contain" }} />
+                    <img
+                        src={logo}
+                        alt="Helen AFH Logo"
+                        style={{ height: "80px", objectFit: "contain" }}
+                    />
                 </Link>
 
                 {/* Desktop Menu */}
@@ -47,17 +49,20 @@ export default function Navbar() {
                     <Link to="/rooms">Rooms</Link>
                     <Link to="/gallery">Gallery</Link>
                     <Link to="/contact">Contact</Link>
+
+                    {/* Call Button */}
+                    <a href="tel:2532707790" className="call-btn">
+                        <FaPhoneAlt /> Call Now
+                    </a>
                 </div>
 
-                {/* Hamburger */}
+                {/* Hamburger Icon */}
                 <button
                     className="hamburger"
                     onClick={() => setOpen(!open)}
                     aria-label="Toggle navigation"
                 >
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    {open ? <FaTimes /> : <FaBars />}
                 </button>
 
             </div>
@@ -70,6 +75,10 @@ export default function Navbar() {
                     <Link to="/rooms" onClick={handleLinkClick}>Rooms</Link>
                     <Link to="/gallery" onClick={handleLinkClick}>Gallery</Link>
                     <Link to="/contact" onClick={handleLinkClick}>Contact</Link>
+
+                    <a href="tel:4255135855" className="call-btn mobile-call">
+                        <FaPhoneAlt /> Call Now
+                    </a>
                 </div>
             )}
         </nav>

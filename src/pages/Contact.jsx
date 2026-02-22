@@ -1,4 +1,10 @@
 import { useState } from "react";
+import {
+    FaPhoneAlt,
+    FaEnvelope,
+    FaMapMarkerAlt,
+    FaCalendarAlt
+} from "react-icons/fa";
 
 export default function Contact() {
     const [reserveTour, setReserveTour] = useState(false);
@@ -12,6 +18,26 @@ export default function Contact() {
                     Have questions or want to schedule a visit? We’re here to help.
                 </p>
 
+                {/* CONTACT INFO CARDS */}
+                <div className="contact-info">
+                    <a href="tel:4255135855">
+                        <FaPhoneAlt /> (425) 513-5855
+                    </a>
+
+                    <a href="mailto:helenayana@helenadultfamilyhome.com">
+                        <FaEnvelope /> Email Us
+                    </a>
+
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=133+107th+St+SE,+Everett,+WA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaMapMarkerAlt /> Everett, WA
+                    </a>
+                </div>
+
+                {/* FORM */}
                 <form
                     action="https://formsubmit.co/helenayana@helenadultfamilyhome.com"
                     method="POST"
@@ -34,16 +60,18 @@ export default function Contact() {
                     <input type="email" name="Email" placeholder="Email Address" required />
                     <input type="tel" name="Phone" placeholder="Phone Number" required />
 
-                    {/* Optional Tour */}
+                    {/* Tour Checkbox */}
                     <label className="checkbox-row">
                         <input
                             type="checkbox"
                             checked={reserveTour}
                             onChange={() => setReserveTour(!reserveTour)}
                         />
-                        <span>Reserve a Tour</span>
+                        <FaCalendarAlt />
+                        <span> Reserve a Tour</span>
                     </label>
 
+                    {/* Conditional Fields */}
                     {reserveTour && (
                         <div className="tour-fields">
                             <label>Preferred Tour Date</label>
