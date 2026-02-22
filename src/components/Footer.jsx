@@ -1,38 +1,41 @@
 export default function Footer() {
     return (
-        <footer className="site-footer centered-footer">
+        <footer className="site-footer">
+            <div className="container footer-content">
 
-            <h4>Contact Us</h4>
+                <h3 className="footer-title">
+                    Helen Adult Family Home
+                </h3>
 
-            <div className="contact-row">
-                <p>
-                    📞 <a href="tel:+12532707790">(253) 270-7790</a>
+                <p className="footer-tagline">
+                    Compassionate 24/7 Care in a Safe, Comfortable Home
                 </p>
 
-                <p>
-                    📧{" "}
+                <div className="contact-row">
+
+                    <a href="tel:+12532707790">
+                        📞 (253) 270-7790
+                    </a>
+
                     <a href="mailto:helenayana@helenadultfamilyhome.com">
-                        helenayana@helenadultfamilyhome.com
-                    </a>{" "}
-                </p>
+                        📧 helenayana@helenadultfamilyhome.com
+                    </a>
 
-                <p>
-                    📍{" "}
                     <a
                         href="https://www.google.com/maps/search/?api=1&query=133+107th+St+SE,+Everett,+WA+98208-7041"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        133 107th St SE,
-                        Everett, WA 98208-7041
+                        📍 133 107th St SE, Everett, WA 98208
                     </a>
-                </p>
-            </div>
 
-            <div className="footer-bottom">
-                © {new Date().getFullYear()} Helen Adult Family Home — All Rights Reserved
-            </div>
+                </div>
 
+                <div className="footer-bottom">
+                    © {new Date().getFullYear()} Helen Adult Family Home — All Rights Reserved
+                </div>
+
+            </div>
         </footer>
     );
 }

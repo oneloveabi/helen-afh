@@ -5,54 +5,58 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
     const navRef = useRef(null);
 
-    // Auto-close mobile menu
-    useEffect(() => {
-        if (!open) return;
-        const timer = setTimeout(() => setOpen(false), 5000);
-        return () => clearTimeout(timer);
-    }, [open]);
-
-    // Close mobile menu on scroll or outside click
+    // Close menu on outside click or scroll
     useEffect(() => {
         const handleOutside = (e) => {
-            if (navRef.current && !navRef.current.contains(e.target)) setOpen(false);
+            if (navRef.current && !navRef.current.contains(e.target)) {
+                setOpen(false);
+            }
         };
-        const handleScroll = () => open && setOpen(false);
+
+        const handleScroll = () => setOpen(false);
 
         window.addEventListener("mousedown", handleOutside);
         window.addEventListener("touchstart", handleOutside);
-        window.addEventListener("scroll", handleScroll, true);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("mousedown", handleOutside);
             window.removeEventListener("touchstart", handleOutside);
-            window.removeEventListener("scroll", handleScroll, true);
+            window.removeEventListener("scroll", handleScroll);
         };
-    }, [open]);
+    }, []);
 
     const handleLinkClick = () => setOpen(false);
 
     return (
         <nav className="nav" ref={navRef}>
-            {/* Make title clickable */}
-            <Link to="/" style={{ textDecoration: "none" }}>
-                <h2>Helen AFH</h2>
-            </Link>
+            <div className="container nav-inner">
 
-            {/* Desktop Menu */}
-            <div className="nav-links desktop">
-                <Link to="/">Home</Link>
-                <Link to="/services">Services</Link>
-                <Link to="/rooms">Rooms</Link>
-                <Link to="/gallery">Gallery</Link>
-                <Link to="/contact">Contact</Link>
-            </div>
+                {/* Logo / Title */}
+                <Link to="/" className="logo">
+                    Helen AFH
+                </Link>
 
-            {/* Mobile Hamburger */}
-            <div className="hamburger" onClick={() => setOpen(!open)}>
-                <div></div>
-                <div></div>
-                <div></div>
+                {/* Desktop Menu */}
+                <div className="nav-links desktop">
+                    <Link to="/">Home</Link>
+                    <Link to="/services">Services</Link>
+                    <Link to="/rooms">Rooms</Link>
+                    <Link to="/gallery">Gallery</Link>
+                    <Link to="/contact">Contact</Link>
+                </div>
+
+                {/* Hamburger */}
+                <button
+                    className="hamburger"
+                    onClick={() => setOpen(!open)}
+                    aria-label="Toggle navigation"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
             </div>
 
             {/* Mobile Menu */}

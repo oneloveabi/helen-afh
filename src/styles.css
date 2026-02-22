@@ -965,3 +965,234 @@ body {
         font-size: 2rem;
     }
 }
+
+.about-home h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-home p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    color: #334155;
+}
+
+/* NAV BAR */
+.nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+/* Logo */
+.logo {
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: #1e293b;
+}
+
+/* Desktop Links */
+.nav-links.desktop {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+/* CTA Button */
+.nav-cta {
+    background: #2563eb;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #1e293b;
+    margin: 4px 0;
+}
+
+/* Mobile Menu */
+.nav-links.mobile {
+    display: none;
+    flex-direction: column;
+    background: white;
+    padding: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.nav-links.mobile.open {
+    display: flex;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links.desktop {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+/* FOOTER */
+.site-footer {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 50px 0 30px;
+    text-align: center;
+}
+
+/* Title */
+.footer-title {
+    margin-bottom: 8px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.footer-tagline {
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Contact Links */
+.contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.contact-row a {
+    color: #cbd5f5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-row a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Bottom */
+.footer-bottom {
+    border-top: 1px solid #334155;
+    padding-top: 18px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .contact-row {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* Contact Page */
+.contact-page h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.contact-page .subtitle {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+/* Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Checkbox Row */
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+/* Tour Fields */
+.tour-fields label {
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Submit Button */
+.cta-button {
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+    .contact-form {
+        gap: 14px;
+    }
+}
