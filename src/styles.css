@@ -891,3 +891,77 @@ body {
         display: none;
     }
 }
+
+/* Layout */
+.container {
+    width: min(1100px, 90%);
+    margin: auto;
+}
+
+.section {
+    padding: 80px 0;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(to right, #1e3a8a, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* CTA Button */
+.cta-button {
+    background: #f59e0b;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    padding: 14px 28px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* TRUST */
+.trust {
+    background: #f8fafc;
+    text-align: center;
+}
+
+.trust-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.trust-list li {
+    font-size: 1.1rem;
+    margin: 12px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
