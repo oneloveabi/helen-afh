@@ -813,3 +813,81 @@ body {
 .about-home p {
     margin-bottom: 18px;
 }
+
+.gallery {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.gallery-container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease;
+}
+
+/* Arrows */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 10;
+}
+
+.arrow.left {
+    left: 12px;
+}
+
+.arrow.right {
+    right: 12px;
+}
+
+.arrow:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Dots */
+.dots {
+    margin-top: 16px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #2575fc;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .gallery img {
+        height: 300px;
+    }
+
+    /* Hide arrows on mobile */
+    .arrow {
+        display: none;
+    }
+}
